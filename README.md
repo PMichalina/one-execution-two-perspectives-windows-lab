@@ -1,4 +1,4 @@
-# One Execution, Two perspectives
+# One Execution, Two Perspectives
 
 ### Offensive Execution vs. Defensive Telemetry
 
@@ -81,7 +81,7 @@ This raised the main defensive question of the project:
 
 The downloaded file contained an NTFS `Zone.Identifier` alternate data stream.
 
-This artifact can indicate that Windows considers the file to originate from ax external source.
+This artifact can indicate that Windows considers the file to originate from an external source.
 
 ![Zone Identifier](screenshots/04-zone-identifier-stream-sanitized.png)
 
@@ -106,7 +106,7 @@ The hash provides a stable identifier that can be used to verify whether the ana
 Windows PowerShell logs were inspected using:
 
 ```powershell
-Get-WinEvent -LogName "Windows POwerShell" -MaxEvents 10 |
+Get-WinEvent -LogName "Windows PowerShell" -MaxEvents 10 |
 Select-Object TimeCreated, Id, LevelDisplayName, Message
 ```
 
@@ -150,7 +150,7 @@ The visibility of process creation depends on system logging and audit configura
 
 ---
 
-# Key Finding
+# Key Findings
 
 ### 1. Visible activity is not the same as system activity
 
@@ -162,7 +162,7 @@ The test encountered protections at different stages:
 
 **Email provider → Windows execution warning → Windows logging**
 
-Each layer provide a different perspective on the same activity.
+Each layer provides a different perspective on the same activity.
 
 ### 3. Different data sources provide different evidence
 
@@ -182,7 +182,7 @@ Telemetry depends on endpoint configuration.
 
 ## **Visible activity ≠ System activity ≠ Available security telemetry**
 
-Security analysis often required correlation between multiple data sources rather than relying on a single log.
+Security analysis often requires correlation between multiple data sources rather than relying on a single log.
 
 ---
 
@@ -198,7 +198,7 @@ The project did not include:
 - advanced PowerShell logging
 - confirmed Process Creation auditing
 
-These limitations also provide directions for the future development.
+These limitations also provide directions for future development.
 
 ---
 

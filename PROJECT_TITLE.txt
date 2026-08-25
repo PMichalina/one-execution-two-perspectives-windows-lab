@@ -1,0 +1,6 @@
+# Keep private/raw lab artifacts out of the public repo
+private/
+raw/
+original-samples/
+*.key
+*.secret
